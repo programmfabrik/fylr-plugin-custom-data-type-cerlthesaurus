@@ -120,7 +120,7 @@ class CERLThesaurusUtil
     for language in shortenedDatabaseLanguages
       l10nObjectWithShortenedLanguages[language] = ''
 
-    objectKeys = ["displayName", "cerlID", "geoNote", "bioData", "variantForms"]
+    objectKeys = ["displayName", "geoNote", "bioData", "variantForms"]
 
     # parse all object-keys and add all values to fulltext
     for key, value of object
