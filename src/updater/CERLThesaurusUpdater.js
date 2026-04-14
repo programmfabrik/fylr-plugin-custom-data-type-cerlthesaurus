@@ -59,6 +59,15 @@ function isInTimeRange(currentHour, fromHour, toHour) {
   }
 }
 
+function getNewCustomExpiresAt() {
+  const newExpiresAt = new Date()
+  const customExpirationConfig = info?.config?.plugin?.['custom-data-type-cerlthesaurus']?.config?.update_cerlthesaurus?.custom_expires_days || 1
+
+  newExpiresAt.setDate(newExpiresAt.getDate() + customExpirationConfig);
+
+  return newExpiresAt.toISOString()
+}
+
 main = (payload) => {
   console.error("main " + payload.action)
   switch (payload.action) {
@@ -178,9 +187,11 @@ main = (payload) => {
               newCdata._standard = CERLThesaurusUtil.getStandardTextFromObject(null, resultObject, newCdata, databaseLanguages);
               if (hasChanges(payload.objects[index].data, newCdata)) {
                 payload.objects[index].data = newCdata;
-              } else { 
-                console.error("CERLThesaurusUpdater: else resultObject")
+              } else {
+                payload.objects[index].data = originalCdata
               }
+              // set expires at for the custom data object according to the plugin base config
+              payload.objects[index].data._expires_at = getNewCustomExpiresAt()
             }
           } else {
             console.error('No matching record found');

@@ -28,3 +28,4 @@ server.config.parameter.system.update_cerlthesaurus.restrict_time.label,Beschrä
 server.config.parameter.system.update_cerlthesaurus.restrict_time.checkbox,Ja - beschränken,Yes - restrict,,
 server.config.parameter.system.update_cerlthesaurus.from_time.label,Stunde von (Zahl 0-24),Hour from (Int 0-24),,
 server.config.parameter.system.update_cerlthesaurus.to_time.label,Stunde bis (Zahl 0-24),Hour to (Int 0-24),,
+server.config.parameter.system.update_cerlthesaurus.custom_expires_days.label,Datengültigkeit (in Tagen),Data expires in (in days),,

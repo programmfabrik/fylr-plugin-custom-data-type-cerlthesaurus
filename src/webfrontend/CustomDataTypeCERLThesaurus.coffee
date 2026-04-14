@@ -135,7 +135,6 @@ class CustomDataTypeCERLThesaurus extends CustomDataTypeWithCommonsAsPlugin
     cerlthesaurusID = decodeURIComponent(uri)
     cerlthesaurusID = cerlthesaurusID.split "/"
     cerlthesaurusID = cerlthesaurusID.pop()
-    # download infos from entityfacts
     if extendedInfo_xhr.xhr != undefined
       # abort eventually running request
       extendedInfo_xhr.xhr.abort()
