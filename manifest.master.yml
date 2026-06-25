@@ -24,8 +24,10 @@ custom_types:
         type: text
       conceptURI:
         type: text
+        skipTerms: true
       facetTerm:
         type: text_l10n
+        skipTerms: true
     config:
       mask:
         - name: allow_placename
