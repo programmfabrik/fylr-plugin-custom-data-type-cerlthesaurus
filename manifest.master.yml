@@ -6,15 +6,25 @@ plugin:
     de-DE: CERL-Thesaurus-Verknüpfung
     en-US: CERL-Thesaurus-Referencing
   info:
-    de-DE: Stellt Verknüpfungen mit de, CERL-Thesaurus her.
-    en-US: Use for references to to entities of the CERL-Thesaurus.
+    de-DE: |
+      Stellt einen eigenen Feldtyp bereit, mit dem Datensätze mit Einträgen des [CERL-Thesaurus](https://data.cerl.org/) verknüpft werden – der Normdatei des Consortium of European Research Libraries (CERL). So hinterlegen Sie eine eindeutige Referenz im Feld, statt Namen als Freitext zu erfassen.
+
+      - Vorschläge während der Eingabe über den GBV-Suggest-Dienst
+      - Ein Feld optional auf Personen-, Körperschafts-, Erscheinungsorts- oder Ortsnamen beschränken
+      - Optionaler automatischer Updater hält die gespeicherten Daten mit der Quelle synchron
+    en-US: |
+      Adds a custom data type for linking records to entities of the [CERL Thesaurus](https://data.cerl.org/), the authority file of the Consortium of European Research Libraries (CERL). Attach an authoritative reference to a field instead of typing names as free text.
+
+      - Type-ahead suggestions from the GBV suggest service
+      - Optionally restrict a field to personal, corporate, imprint or place names
+      - Optional automatic updater keeps stored data in sync with the source
   l10n: l10n/customDataTypeCERLThesaurus.csv
   webfrontend:
     url: customDataTypeCERLThesaurus.js
     css: customDataTypeCERLThesaurus.css
     dependencies:
       - commons-library
-    
+
 base_url_prefix: "webfrontend"
 
 custom_types:
@@ -86,9 +96,9 @@ base_config:
         default: 4
         min: 0
         max: 24
-        position: 2 
+        position: 2
       custom_expires_days:
         type: int
         min: 1
         default: 1
-        position: 3        
+        position: 3
