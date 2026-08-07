@@ -12,7 +12,7 @@ The Plugins uses <https://ws.gbv.de/suggest/cerl_thesaurus/> for the autocomplet
 
 ## installation
 
-The latest version of this plugin can be found [here](https://github.com/programmfabrik/fylr-plugin-custom-data-type-cerlthesaurus/releases/latest/download/customDataTypeCERLThesaurus.zip).
+The latest version of this plugin can be found [here](https://github.com/programmfabrik/fylr-plugin-custom-data-type-cerlthesaurus/releases/latest/download/fylr-plugin-custom-data-type-cerlthesaurus.zip).
 
 The ZIP can be downloaded and installed using the plugin manager, or used directly (recommended).
 
