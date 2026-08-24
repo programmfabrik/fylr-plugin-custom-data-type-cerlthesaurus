@@ -11,18 +11,23 @@
 server:
   install:
   - l10n/customDataTypeCERLThesaurus.csv
+  # assembled server-side files, sources in the order written
+  bundles:
+    - out: updater/CERLThesaurusUpdater.js
+      sources:
+      - src/updater/CERLThesaurusUpdater.js
+      - webfrontend/CERLThesaurusUtil.coffee
 webfrontend:
-  coffee1:
-  - webfrontend/CustomDataTypeCERLThesaurus.coffee
-  - webfrontend/CustomDataTypeCERLThesaurusFacet.coffee
-  - webfrontend/CERLThesaurusUtil.coffee
+  # assembled into plugin.webfrontend.url, in this order:
+  # .coffee is compiled (CoffeeScript 1.x), .scss compiled,
+  # anything else taken verbatim
+  bundles:
+    - sources:
+        - webfrontend/CustomDataTypeCERLThesaurus.coffee
+        - webfrontend/CustomDataTypeCERLThesaurusFacet.coffee
+        - webfrontend/CERLThesaurusUtil.coffee
   install:
   - webfrontend/customDataTypeCERLThesaurus.css
-build:
-  bundles:
-  - out: updater/CERLThesaurusUpdater.js
-    sources:
-    - src/updater/CERLThesaurusUpdater.js
-    - webfrontend/CERLThesaurusUtil.coffee
-  zip_aliases:
-  - customDataTypeCERLThesaurus.zip
+
+zip_aliases:
+- customDataTypeCERLThesaurus.zip
